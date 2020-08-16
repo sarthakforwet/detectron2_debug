@@ -195,7 +195,6 @@ jobs:
     <<: *windows_cpu
     steps:
       - checkout
-      - <<: *setup_venv_win
       - <<: *install_dep_win
       - <<: *install_detectron2_win
       - <<: *run_unittests
