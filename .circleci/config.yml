@@ -196,19 +196,7 @@ jobs:
     steps:
       - checkout
       - <<: *setup_venv_win
-
-      # Cache the env directory that contains dependencies
-      - restore_cache:
-          keys:
-            - cache-key-{{ .Branch }}-ID-20200730
-
       - <<: *install_dep_win
-
-      - save_cache:
-          paths:
-            - env
-          key: cache-key-{{ .Branch }}-ID-20200730
-
       - <<: *install_detectron2_win
       - <<: *run_unittests
 
